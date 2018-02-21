@@ -47,6 +47,11 @@ public class StringsAndThings {
         return stringToRemoveValuesFrom.toString();
 
 
+/*owen told me this and he got it from peers, from java API:
+       return base.replace(strToRemove,"");
+
+        */
+
 
 //
 //        if (remove.length() > 1){

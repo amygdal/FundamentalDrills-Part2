@@ -53,6 +53,13 @@ public class StringsAndThingsTest {
     }
 
     @Test
+    public void withoutStringTestDoubles(){
+        String expected = "Hl";
+        String actual = stringsAndThings.withoutString("Heel", "e");
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void withoutStringTest3(){
         String expected = "Hello there";
         String actual = stringsAndThings.withoutString("Hello there", "x");

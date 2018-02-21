@@ -15,7 +15,6 @@ public class StringsAndThings {
 
         String[] inputToArray = input.split(" ");
         for (Integer i = 0; i < inputToArray.length; i++) {
-
             String currentWord = inputToArray[i];
             char lastIndexOfCurrentWord = currentWord.charAt(currentWord.length() -1);
             if (lastIndexOfCurrentWord == 'y' || lastIndexOfCurrentWord == 'z'){
@@ -34,8 +33,36 @@ public class StringsAndThings {
      *           withoutString("Hello there", "x") // Should return "Hello there"
      *
      */
-    public String withoutString(String base, String remove){
-        return null;
+    public String withoutString(String base, String strToRemove){
+
+        StringBuilder stringToRemoveValuesFrom = new StringBuilder(base);
+
+        for (int i = 0; i <= stringToRemoveValuesFrom.length()-strToRemove.length(); i++){
+            if (stringToRemoveValuesFrom.substring(i, strToRemove.length()+i).equals(strToRemove)) {
+                stringToRemoveValuesFrom.delete(i,strToRemove.length()+i);
+                i--;
+            }
+        }
+
+        return stringToRemoveValuesFrom.toString();
+
+
+
+//
+//        if (remove.length() > 1){
+//            char[] removeToCharArray = remove.toCharArray();
+//            for (Integer i = 0; i < base.length(); i++){
+//                if (!removeToCharArray.contains(char)){
+//
+//                }
+//            }
+//        }
+//
+//        for {
+//            char charToCheck = base.charAt(i);
+//            if (removeToCharArray)
+//        }
+
     }
 
     /**
@@ -47,7 +74,36 @@ public class StringsAndThings {
      *           equalIsNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean equalIsNot(String input){
-        return null;
+
+        StringBuilder stringToCheckValuesFrom = new StringBuilder(input);
+
+        String is = "is";
+        String not = "not";
+
+        Integer countIs = 0;
+
+        for (int i = 0; i <= stringToCheckValuesFrom.length()-is.length(); i++){
+            if (stringToCheckValuesFrom.substring(i, is.length()+i).equals(is)) {
+                countIs++;
+
+            }
+        }
+
+        Integer countNot = 0;
+
+        for (int i = 0; i <= stringToCheckValuesFrom.length()-not.length(); i++){
+            if (stringToCheckValuesFrom.substring(i, not.length()+i).equals(not)) {
+                countNot++;
+
+            }
+        }
+
+        Boolean answer = false;
+        if (countIs == countNot){
+            answer = true;
+        }
+
+        return answer;
     }
 
     /**
@@ -58,7 +114,9 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        Boolean answer = false;
+
+        return answer;
     }
 
 

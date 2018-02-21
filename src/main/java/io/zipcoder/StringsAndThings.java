@@ -121,6 +121,13 @@ public class StringsAndThings {
     public Boolean gIsHappy(String input){
         Boolean answer = false;
 
+        CharSequence whatWereLookingFor = "gg";
+
+        if (input.contains(whatWereLookingFor)){
+            answer = true;
+        }
+
+
         return answer;
     }
 
@@ -133,6 +140,17 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        Integer count = 0;
+
+        char[] inputToCharArray = input.toCharArray();
+
+        for (Integer i = 1; i < input.length(); i++){
+            if ((inputToCharArray[i] == inputToCharArray[i-1]) && (inputToCharArray[i] == inputToCharArray[i+1])) {
+                count++;
+            }
+        }
+
+
+        return count;
     }
 }
